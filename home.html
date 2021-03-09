@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Need to add boostrap and modify html to use it -->
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
-    <div class="header">
-        <form class="header-button-list" action="Search.php">
-            <input class="search-field" type="text" id="fname" value="Search">
-            <button class="header-button" formaction="home.html">Home</button>
-            <button class="header-button" formaction="jobs.html">Jobs</button>
-            <button class="header-button" formaction="connections.html">Connections</button>
-            <button class="header-button" formaction="profile.html">Profile</button>
-        </form>
-    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="logo.png" width="215.8px" height="57.2px" style="margin-right: 100px;">
+            </div>
+            <div style="padding-top: 5px;">
+                <a href=" home.html " class="btn btn-primary btn-lg " role="button ">Home</a>
+                <a href="jobs.html " class="btn btn-primary btn-lg " role="button ">Jobs</a>
+                <a href="connections.html " class="btn btn-primary btn-lg " role="button ">Connections</a>
+                <a href="profile.html " class="btn btn-primary btn-lg " role="button ">Profile</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="profile-body">
-        <div class="left-profile">
+        <div class="left-profile col-sm-9">
 
         </div>
-        <div class="right-profile">
+        <div class=" right-profile col-sm-3 ">
 
         </div>
     </div>

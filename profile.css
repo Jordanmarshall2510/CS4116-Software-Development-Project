@@ -1,78 +1,48 @@
-body{
-	background-color: #878f99;
-	margin: 0;
+body {
+    background-color: #404040;
+    margin: 0;
 }
 
-.header{
-	background-color: #6b5b95;
-	height: 100px;
-	display: flex;
-  	justify-content: space-around;
+.navbar {
+    background-image: linear-gradient(to right, #b200ff, #4018ff);
 }
 
-.header-button-list{
-	padding-top: 25px;
-	padding-left: 30%;
-	padding-right: 10%;
-	display: flex;
-  	justify-content: space-around;
+.btn {
+    background-color: white;
+    color: black;
+    padding: 8px 56px;
+    margin: 4px 2px;
+    text-align: center;
+    font-size: 16px;
 }
 
-.header-button{
-	width: 100%;
-	background-color: #656B73; 
-  	color: white;
-  	padding: 8px 56px;
-  	margin: 4px 2px;
-  	text-align: center;
-  	font-size: 16px;
+.profile-body {
+    display: flex;
+    justify-content: space-around;
+    height: 90vh;
+    color: white;
 }
 
-.search-field{
-	width: 100%;
-	background-color: #656B73; 
-  	color: white;
-  	padding: 8px 120px;
-  	margin: 4px 20px;
-  	text-align: center;
-  	font-size: 16px;
+.left-profile {
+    margin: 10px;
+    background-color: #808080;
+    border-radius: 25px;
 }
 
-.header-button:hover{
-	background-color: #878f99;
-  	color: white;
+.introduction {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 30px;
 }
 
-.profile-body{
-	display: flex;
-  	justify-content: space-around;
-  	height:800px;
-  	color: white;
+.name_occupation {
+    padding-left: 50px;
+    padding-top: 30px;
 }
 
-.left-profile{
-	padding: 20px;
-	margin: 10px;
-	width: 50%;
-	background-color: #656B73;
-	border-radius: 25px;
-}
-
-.introduction{
-	display: inline-flex;
-  	justify-content: space-around;
-  	font-size: 30px;
-}
-
-.name_occupation{
-	padding-left: 50px; 
-	padding-top: 30px;
-}
-
-.right-profile{
-	padding: 20px;
-	margin: 10px;
-	width: 50%;
-	background-color: #656B73;
-	border-radius: 25px;
+.right-profile {
+    margin: 10px;
+    background-color: #808080;
+    border-radius: 25px;
 }

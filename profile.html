@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Need to add boostrap and modify html to use it -->
-
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="profile.css">
 </head>
 
 <body>
-    <div class="header">
-        <div>
-            <img src="">
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <img src="logo.png" width="215.8px" height="57.2px" style="margin-right: 100px;">
+            </div>
+            <div style="padding-top: 5px;">
+                <a href=" home.html " class="btn btn-primary btn-lg " role="button ">Home</a>
+                <a href="jobs.html " class="btn btn-primary btn-lg " role="button ">Jobs</a>
+                <a href="connections.html " class="btn btn-primary btn-lg " role="button ">Connections</a>
+                <a href="profile.html " class="btn btn-primary btn-lg " role="button ">Profile</a>
+            </div>
         </div>
-        <div>
-            <form class="header-button-list" action="Search.php">
-                <input class="search-field" type="text" id="fname" value="Search">
-                <button class="header-button" formaction="home.html">Home</button>
-                <button class="header-button" formaction="jobs.html">Jobs</button>
-                <button class="header-button" formaction="connections.html">Connections</button>
-                <button class="header-button" formaction="profile.html">Profile</button>
-            </form>
-        </div>
-    </div>
-    <div class="profile-body">
-        <div class="left-profile">
-            <div class="introduction">
+    </nav>
+
+    <div class="profile-body ">
+        <div class="left-profile col-sm-9 ">
+            <div class="introduction ">
                 <div>
-                    <img src="" width="200" height="200" style="border-radius: 50%">
+                    <img src="profile_picture.jpg " width="200 " height="200 " style="border-radius: 50%; border: solid white; ">
                 </div>
-                <div class="name_occupation">
-                    <h1>Mike<br/>Wazowski</h1>
-                    <h4>Scaring Assistant at Monsters, Inc.</h4>
+                <div class="name_occupation ">
+                    <h1>Jane<br/>Smith</h1>
+                    <h4>Senior Software Developer at Java Ltd.</h4>
                 </div>
             </div>
         </div>
-        <div class="right-profile">
-            <h1>Right</h1>
+        <div class=" right-profile col-sm-3 ">
+            User Connections Go Here
         </div>
     </div>
 </body>

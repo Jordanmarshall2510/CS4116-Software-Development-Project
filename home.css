@@ -23,8 +23,25 @@ body {
     color: white;
 }
 
+.left-profile {
+    margin: 10px;
+    background-color: #808080;
+    border-radius: 25px;
+}
+
 .right-profile {
     margin: 10px;
     background-color: #808080;
     border-radius: 25px;
+}
+
+.name_occupation1 {
+    padding-left: 20px;
+}
+
+.connections-list {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 30px;
 }

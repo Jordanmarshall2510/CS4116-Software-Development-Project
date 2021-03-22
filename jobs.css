@@ -16,15 +16,54 @@ body {
     font-size: 16px;
 }
 
-.profile-body {
+/* .profile-body {
     display: flex;
     justify-content: space-around;
     height: 90vh;
     color: white;
+} */
+
+.left-profile {
+    margin: 10px;
+    background-color: #808080;
+    border-radius: 25px;
+
+    float: left;
+    width: 74%;
+    padding: 10px;
+    height: 800px; 
+}
+
+.introduction {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.name_occupation {
+    padding-left: 50px;
+    padding-top: 30px;
 }
 
 .right-profile {
     margin: 10px;
     background-color: #808080;
     border-radius: 25px;
+
+    float: left;
+    width: 23%;
+    padding: 10px;
+    height: 800px; 
+}
+
+.name_occupation1 {
+    padding-left: 20px;
+}
+
+.connections-list {
+    display: inline-flex;
+    justify-content: space-around;
+    padding: 10px;
+    font-size: 30px;
 }

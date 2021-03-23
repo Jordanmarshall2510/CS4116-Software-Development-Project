@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="connections.css">
 </head>
 
 <body>
@@ -13,7 +13,7 @@
                 <img src="logo.png" width="215.8px" height="57.2px" style="margin-right: 100px;">
             </div>
             <div style="padding-top: 5px;">
-                <a href=" home.html " class="btn btn-primary btn-lg " role="button ">Home</a>
+                <a href="home.html " class="btn btn-primary btn-lg " role="button ">Home</a>
                 <a href="jobs.html " class="btn btn-primary btn-lg " role="button ">Jobs</a>
                 <a href="connections.html " class="btn btn-primary btn-lg " role="button ">Connections</a>
                 <a href="profile.html " class="btn btn-primary btn-lg " role="button ">Profile</a>
@@ -21,12 +21,75 @@
         </div>
     </nav>
 
-    <div class="profile-body">
-        <div class="left-profile col-sm-9">
-
+    <div class="row">
+        <div class="column1 left-profile" style="background-color:#aaa;">
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                        <input type="text" name="name">
+                        <input type="submit" value="Search">
+                </form>
+                
+                <?php
+					include 'connections.php';
+					if ($_SERVER["REQUEST_METHOD"] == "POST") {
+						// collect value of input field
+						$name = $_POST['name'];
+						$result = searchUsersWithAllInfo($name);
+						// Result Array format:
+						// 0 -> Name
+						// 1 -> Occupation
+						if(!empty($result)){
+							foreach($result as $user){
+								echo $user[0] . "<br>";
+								echo "Occupation: " . $user[1] . "<br><br>";
+							}
+						} else {
+							echo "No results <br>";
+						}
+					}
+                ?>
         </div>
-        <div class=" right-profile col-sm-3 ">
 
+        <div class="column2 right-profile" style="background-color:#bbb;">
+            
+            <div class="connections-list">
+                <div>
+                    <img src="profile_picture.jpg " width="150" height="150" style="border-radius: 50%; border: solid white; ">
+                </div>
+                <div class="name_occupation1">
+                    <h2>Joseph<br/>Smith</h2>
+                    <h4>Senior Software Developer at Lua Ltd.</h4>
+                </div>
+            </div>
+
+            <div class="connections-list">
+                <div>
+                    <img src="profile_picture.jpg " width="150" height="150" style="border-radius: 50%; border: solid white; ">
+                </div>
+                <div class="name_occupation1">
+                    <h2>Joseph<br/>Smith</h2>
+                    <h4>Senior Software Developer at Lua Ltd.</h4>
+                </div>
+            </div>
+
+            <div class="connections-list">
+                <div>
+                    <img src="profile_picture.jpg " width="150" height="150" style="border-radius: 50%; border: solid white; ">
+                </div>
+                <div class="name_occupation1">
+                    <h2>Joseph<br/>Smith</h2>
+                    <h4>Senior Software Developer at Lua Ltd.</h4>
+                </div>
+            </div>
+
+            <div class="connections-list">
+                <div>
+                    <img src="profile_picture.jpg " width="150" height="150" style="border-radius: 50%; border: solid white; ">
+                </div>
+                <div class="name_occupation1">
+                    <h2>Joseph<br/>Smith</h2>
+                    <h4>Senior Software Developer at Lua Ltd.</h4>
+                </div>
+            </div>
         </div>
     </div>
 </body>

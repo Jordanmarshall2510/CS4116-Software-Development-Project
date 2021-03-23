@@ -4,6 +4,10 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="jobs.css">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -24,45 +28,92 @@
     <div class="row">
         <div class="column1 left-profile" style="background-color:#aaa;">
 
-            <div class="introduction">
-                <div>
-                    <img src="profile_picture.jpg " width="150" height="150" style="border-radius: 50%; border: solid white; ">
-                </div>
-                <div class="name_occupation1">
-                    <h1>Jack<br/>Smith</h1>
-                    <span>Senior Software Developer at Java Ltd.<b> €40,000 - €50,000</b> <href="" class="btn btn-primary btn-lg " role="button ">Apply</span>
-                </div>
-            </div>
+            <form method = "post" action="<?php echo $_SERVER['PHP_SELF'];?>">
 
-            <div class="introduction">
-                <div>
-                    <img src="profile_picture.jpg " width="150 " height="150 " style="border-radius: 50%; border: solid white; ">
-                </div>
-                <div class="name_occupation1">
-                    <h1>Jack<br/>Smith</h1>
-                    <span>Senior Software Developer at Java Ltd.<b> €40,000 - €50,000</b> <href="" class="btn btn-primary btn-lg " role="button ">Apply</span>
-                </div>
-            </div>
+                <select id="skills1" name="skills1">
+                    <option value="">Skill</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+					<option value="Lua">Lua</option>
+					<option value="Ruby">Ruby</option>
+					<option value="C#">C#</option>
+					<option value="C">C</option>
+					<option value="C+">C+</option>
+					<option value="C++">C++</option>
+					<option value="PHP">PHP</option>
+					<option value="HTML">HTML</option>
+					<option value="CSS">CSS</option>
+					<option value="Git">Git</option>
+					<option value="Linux">Linux</option>
+                </select>
 
-            <div class="introduction">
-                <div>
-                    <img src="profile_picture.jpg " width="150 " height="150 " style="border-radius: 50%; border: solid white; ">
-                </div>
-                <div class="name_occupation1">
-                    <h1>Jack<br/>Smith</h1>
-                    <span>Senior Software Developer at Java Ltd.<b> €40,000 - €50,000</b> <href="" class="btn btn-primary btn-lg " role="button ">Apply</span>
-                </div>
-            </div>
+                <select id="skills2" name="skills2">
+                    <option value="">Skill</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+					<option value="Lua">Lua</option>
+					<option value="Ruby">Ruby</option>
+					<option value="C#">C#</option>
+					<option value="C">C</option>
+					<option value="C+">C+</option>
+					<option value="C++">C++</option>
+					<option value="PHP">PHP</option>
+					<option value="HTML">HTML</option>
+					<option value="CSS">CSS</option>
+					<option value="Git">Git</option>
+					<option value="Linux">Linux</option>
+                </select>
 
-            <div class="introduction">
-                <div>
-                    <img src="profile_picture.jpg " width="150 " height="150 " style="border-radius: 50%; border: solid white; ">
-                </div>
-                <div class="name_occupation1">
-                    <h1>Jack<br/>Smith</h1>
-                    <span>Senior Software Developer at Java Ltd.<b> €40,000 - €50,000</b> <href="" class="btn btn-primary btn-lg " role="button ">Apply</span>
-                </div>
-            </div>
+                <select id="skills3" name="skills3">
+                    <option value="">Skill</option>
+                    <option value="Java">Java</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+					<option value="Lua">Lua</option>
+					<option value="Ruby">Ruby</option>
+					<option value="C#">C#</option>
+					<option value="C">C</option>
+					<option value="C+">C+</option>
+					<option value="C++">C++</option>
+					<option value="PHP">PHP</option>
+					<option value="HTML">HTML</option>
+					<option value="CSS">CSS</option>
+					<option value="Git">Git</option>
+					<option value="Linux">Linux</option>
+                </select>
+
+                <input type="submit" value="Search">
+
+            </form>
+			
+			<?php
+			include 'jobs.php';
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+				// collect value of input field
+				$skills1 = $_POST['skills1'];
+				$skills2 = $_POST['skills2'];
+				$skills3 = $_POST['skills3'];
+				$result = searchVacanciesWithAllInfo($skills1, $skills2, $skills3);
+				// Result Array format:
+				// 0 -> Name
+				// 1 -> MinSalary
+				// 2 -> MaxSalary
+				// 3 -> Skill 1
+				// 4 -> Skill 2
+				// 5 -> Skill 3
+				if(!empty($result)){
+					foreach($result as $vacancy){
+						echo $vacancy[0] . "<br>";
+						echo "Salary: " . $vacancy[1] . " - " . $vacancy[2] . "<br>";
+						echo "Required Skills: " . $vacancy[3] . ", " . $vacancy[4] . ", " . $vacancy[5] . "<br><br>";
+					}
+				} else {
+					echo "No results <br>";
+				}
+			}
+			?>
             
         </div>
 

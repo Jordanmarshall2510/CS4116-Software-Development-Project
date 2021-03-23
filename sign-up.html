@@ -1,3 +1,16 @@
+<?php
+    include "sign-up.php";
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        //collect value of input field
+        $nameText = $_POST['name'];
+        $emailText = $_POST['email'];
+        $passwordText = $_POST['password'];
+        $companyCheck = isset($_POST['company']);
+        echo $nameText."-----".$emailText."-----".$passwordText."-----".$companyCheck."<br>";
+        echo generateUserID();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,34 +21,19 @@
 
 <body>
     <div class="container">
-
             <img src="logo.png" width="800px" height="200px" style="margin-left: 175px; margin-top: 200px;">
 
             <h1 style="margin-left: 515px;"> Sign up </h1>
             
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="username" type="text" class="form-control" name="username" placeholder="Username">
-            </div>
-
-            <br>
-
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-            </div>
-            
-            <br>
-
-            <div class="input-group">
-                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-            </div>
-            <div class="checkbox">
-                <label><input type="checkbox" value="">Company</label>
-            </div>
-            <br>
-            <a href="login.html" class="btn btn-primary btn-lg " style="margin-left: 500px; margin-right: 500px;" role="button ">Submit</a>
+            <div class="form-group">
+                <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                        Name: <input type="text" name="name"><br><br>
+                        Email: <input type="text" name="email"><br><br>
+                        Password: <input type="password" name="password"><br><br>
+                        Company: <input type="checkbox" value="" name="company"><br><br>
+                        <input type="submit" value="Submit">
+                </form>
+            </div> 
     </div>
 </body>
 
